@@ -249,7 +249,7 @@ class Subscription extends Model
         if ($discount->amount > 0 && $discount->numberOfBillingCycles > 0) {
             $options = ['discounts' => ['add' => [
                 [
-                    'inheritedFromId' => 'plan-credit',
+                    'inheritedFromId' => config('services.braintree.plan_credit_discount_id'),
                     'amount' => (float) $discount->amount,
                     'numberOfBillingCycles' => $discount->numberOfBillingCycles,
                 ],
